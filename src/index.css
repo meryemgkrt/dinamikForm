@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+}
+
+@layer components {
+  .inputClass {
+    @apply text-center w-full h-12 text-white font-bold text-xl border-b-purple-400 border-b-[0.4px] bg-transparent outline-none outline-dashed focus:outline-white/10 placeholder-white;
+  }
+}
+
+span {
+  display: none;
+}
+/* input:invalid[focused="true"] {
+  border-bottom: 1px solid red;
+} */
+
+input:invalid ~ span {
+  display: block;
+}
